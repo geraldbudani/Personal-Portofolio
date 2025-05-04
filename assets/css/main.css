@@ -383,14 +383,38 @@ a.back-to-top:focus {
 02. Start Header Area
 ========================================================================== */
 .navbar {
-  padding: 15px 0;
+  background-color: #222 !important; /* dark background */
+  color: white !important;
 }
+
+/* Adjust brand text */
 .navbar-brand p {
-  font-size: 32px;
-  text-transform: uppercase;
-  color: rgb(0, 195, 255);
-  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
 }
+
+/* Make navbar text smaller on small screens */
+@media (max-width: 768px) {
+  .navbar-brand p {
+      font-size: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+      font-size: 0.9rem;
+  }
+}
+
+/* Optional: make navbar text white */
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+/* Optional: fix background when menu is expanded on mobile */
+.navbar-collapse {
+  background-color: #222;
+}
+
 .bg-faded {
   background-color: transparent;
   transition: all 0.3s ease 0s;
@@ -401,6 +425,7 @@ a.back-to-top:focus {
     display: none;
   }
   .bg-faded {
+    display: block ;
     background: #fff;
     animation: fadeInDown 1s both 0.2s;
   }
